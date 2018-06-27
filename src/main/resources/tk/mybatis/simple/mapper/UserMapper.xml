@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+					"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="tk.mybatis.simple.mapper.UserMapper">
+	<resultMap id="userMap" type="tk.mybatis.simple.model.SysUser">
+		<id property="id" column="id"/>
+		<result property="userName" column="user_name"></result>
+		<result property="userPassword" column="user_password"></result>
+		<result property="userEmail" column="user_email"></result>
+		<result property="userInfo" column="userInfo"></result>
+		<result property="headImg" column="head_img"  jdbcType="BLOB"  typeHandler="org.apache.ibatis.type.BlobTypeHandler"></result>
+		<result property="createTime" column="create_time" jdbcType="TIMESTAMP"></result>
+	</resultMap>
+
+	<select id="selectById" resultMap="userMap">
+		select id,
+			user_name userName,
+			user_password userPassword,
+			user_email userEmail,
+			user_info userInfo,
+			head_img headImg,
+			create_time createTime FROM sys_user WHERE id = #{id}
+	</select>
+
+	<select id="selectAll" resultType="SysUser">
+		SELECT id,
+			user_name userName,
+			user_password userPassword,
+			user_email userEmail,
+			user_info userInfo,
+			head_img headImg,
+			create_time createTime
+		  FROM sys_user
+	</select>
+</mapper>
