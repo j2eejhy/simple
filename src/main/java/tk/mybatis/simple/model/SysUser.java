@@ -1,9 +1,8 @@
 package tk.mybatis.simple.model;
 
-import com.mysql.jdbc.Blob;
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
 
 
 /**
@@ -13,6 +12,18 @@ import java.sql.Date;
  */
 @Data
 public class SysUser {
+
+    public SysUser() {
+
+    }
+
+    public SysUser(int a) {
+
+    }
+
+    public SysUser(int a,String b) {
+
+    }
 
     private Long id;
 
