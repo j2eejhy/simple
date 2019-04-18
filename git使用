@@ -1,0 +1,17 @@
+1.到本地项目右键选择 git bash here
+2.git init  
+3.git add . (注意add和.有个空格)
+4.git commit -m "first commit" 表示你对这次提交的注释，双引号里面的内容可以根据个人的需要改。例如 " git commit -m "第一次提交 " 
+5.git remote add origin https://github.com/j2eejhy/springboot.git（新生产的项目地址）
+6.git push -u origin master
+
+
+1.git branch dev   创建新的分支 (dev为新分支的名称)
+2.git checkout dev 切换分支
+
+合并代码（将dev的合到master）
+1.git checkout master  首先切换到主分支
+2.git pull origin master  多人开发的时候将远程master上的代码pull下来
+3.git merge dev
+4.git status
+5.git push origin master
